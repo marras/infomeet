@@ -1,0 +1,145 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+\usecolortheme{spruce}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage{listings}
+\lstloadlanguages{Ruby}
+\lstset{basicstyle=\ttfamily\color{black}\scriptsize,
+        commentstyle = \ttfamily\color{red},
+        keywordstyle=\ttfamily\color{blue},
+        stringstyle=\color{orange},
+        breaklines=true}
+
+\begin{document}
+\title{Ruby on Rails}
+\subtitle{z czym to się je?}
+\author{Marek Waligórski}
+\date{31 stycznia 2015, InfoMEET Poznań}
+
+\begin{frame}[fragile]
+\titlepage
+\end{frame}
+
+\section{Ruby}
+\begin{frame}[fragile]\frametitle{What?}
+  * tryruby.org, https://www.bloc.io/ruby-warrior#/
+  * object oriented
+  * open classes, open modules, open everything
+  * mozna nadpisac singletonowe metody kazdego obiektu
+\end{frame}
+
+\begin{frame}[fragile]
+\begin{lstlisting}[language=Ruby]
+
+#this is a comment
+
+a = 5
+b = a * 5
+puts b
+puts b + 3
+
+class Test < Test::SomeClass
+@test = 3
+    def bar
+        if foo
+            puts "foo"
+        else
+            puts "bar"
+        end
+    end
+end
+\end{lstlisting}
+lalal
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{klasy}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Everything is an object}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{bloki (closures)}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{spaceship operator + sorting}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{singleton classes}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{CONSTANTS??}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Gems for everything}
+ + Gemfile - so cool (bundle install)
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Garbage Collection - Mark \& Sweep}
+% http://patshaughnessy.net/2013/10/24/visualizing-garbage-collection-in-ruby-and-python
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Wątki zielone}
+\end{frame}
+\subsection{Implementacje}
+ - otwartość
+
+\begin{frame}[fragile]
+\frametitle{implementacje}
+    * MRI
+    - JRuby - różnice
+\end{frame}
+
+
+
+\subsection{Plusy}
+
+\begin{frame}[fragile]
+\frametitle{Co nam dał?}
+
+- Technologie sieciowe - where it excels
+* lessCSS / SASS
+* HAML
+* CoffeeScript
+* Rails!!!
+\end{frame}
+
+\subsection{Z czym się tego nie je}
+
+\begin{frame}[fragile]
+\frametitle{Z czym się tego nie je?}
+    * GameDev
+    * High-performance tasks (ale można integrować z modułami C++, ale nie ma np.\ bytecode'u - tylko AST)
+    * Wątki - sztuczne (JRuby obsługuje kilka)
+\end{frame}
+
+\section{Rails}
+\subsection{O co chodzi?}
+\begin{frame}[fragile]
+\frametitle{MVC}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{TDD?}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{PRUG}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Big sites made with RoR}
+Hulu, YellowPages, GitHub, Twitter (początkowo), Ask.fm
+\end{frame}
+\section{Podsumowanie}
+
+\begin{frame}[fragile]
+\frametitle{Rekrutujemy!}
+%https://netguru.co/career
+\end{frame}
+\end{document}
