@@ -1,6 +1,6 @@
 \documentclass{beamer}
 \usetheme{Warsaw}
-\usecolortheme{spruce}
+\usecolortheme{structure}
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -13,12 +13,28 @@
         stringstyle=\color{orange},
         breaklines=true}
 
-\begin{document}
+\hypersetup{colorlinks=true}
+
 \title{Ruby on Rails}
 \subtitle{z czym to się je?}
 \author{Marek Waligórski}
-\date{31 stycznia 2015, InfoMEET Poznań}
+\date{31 stycznia 2015}
+\institute{InfoMEET Poznań}
+\titlegraphic{\includegraphics[width=2cm,height=2cm]{Ruby_logo.png}}
 
+% Dodaj obrazek do kazdego frametitle
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip
+    \begin{beamercolorbox}[sep=0.3cm,ht=1.8em,wd=\paperwidth]{frametitle}
+        \vbox{}
+        \vspace{-1.2ex}
+        \strut\insertframetitle\strut
+        \hfill
+        \includegraphics[height=0.5cm]{Ruby_logo.png}
+    \end{beamercolorbox}
+}
+
+\begin{document}
 \begin{frame}[fragile]
 \titlepage
 \end{frame}
@@ -129,6 +145,17 @@ lalal
 \end{frame}
 
 \begin{frame}[fragile]
+\frametitle{Jak zacząć?}
+
+Heroku 
+EngineYard
+\end{frame}
+
+
+
+\section{Podsumowanie}
+
+\begin{frame}[fragile]
 \frametitle{PRUG}
 \end{frame}
 
@@ -136,10 +163,9 @@ lalal
 \frametitle{Big sites made with RoR}
 Hulu, YellowPages, GitHub, Twitter (początkowo), Ask.fm
 \end{frame}
-\section{Podsumowanie}
 
 \begin{frame}[fragile]
 \frametitle{Rekrutujemy!}
-%https://netguru.co/career
+\url{https://netguru.co/career}
 \end{frame}
 \end{document}
