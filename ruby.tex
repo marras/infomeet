@@ -1,49 +1,181 @@
+%%%% OBIEKTY %%%%%
+\mytitle{Wszystko jest obiektem}
+
 \begin{frame}[fragile]
+\frametitle{Wszystko jest obiektem}
+\begin{block}{}
 \begin{lstlisting}[language=Ruby]
+5.class  # => Fixnum
+5 + 3    # => 8
+5.+(3)   # => 8
+\end{lstlisting}
+\end{block}
+\end{frame}
 
-#this is a comment
+\begin{frame}[fragile]
+\frametitle{Nic nie jest wieczne}
+\begin{block}{}
+\begin{lstlisting}[language=Ruby]
+5.class  # => Fixnum
+5 + 3    # => 8
+5.+(3)   # => 8
+\end{lstlisting}
+\end{block}
+\begin{block}{Psikus!}
+\begin{lstlisting}[language=Ruby]
+class Fixnum
+  def +(x)
+    self - x
+  end
+end
 
-a = 5
-b = a * 5
-puts b
-puts b + 3
+5 + 3    # => 2
+\end{lstlisting}
+\end{block}
+\end{frame}
 
-class Test < Test::SomeClass
-@test = 3
-    def bar
-        if foo
-            puts "foo"
-        else
-            puts "bar"
-        end
-    end
+%%%% STALE %%%%%
+
+\begin{frame}[fragile]
+\frametitle{Nic nie jest wieczne}
+\begin{block}{Stałe}
+\begin{lstlisting}[language=Ruby]
+CONSTANT = 5
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Nic nie jest wieczne}
+\begin{block}{Stałe}
+\begin{lstlisting}[language=Ruby]
+CONSTANT = 5
+\end{lstlisting}
+\end{block}
+\begin{block}{Psikus!}
+\begin{lstlisting}[language=Ruby]
+CONSTANT = 5
+CONSTANT = 0
+# warning: already initialized constant CONSTANT
+puts CONSTANT
+# => 0
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\subsection{Zalety}
+\mytitle{Czy Ruby ma jakieś zalety?}
+\mytitle{Ma.}
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Pętla}
+\begin{lstlisting}[language=Ruby]
+5.times { puts "Hello!" }
+Hello
+Hello
+Hello
+Hello
+Hello
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Losowanie}
+\begin{lstlisting}[language=Ruby]
+gracze = ['Ela', 'Ola', 'Agnieszka', 'Marek', 'Wojtek', 'Marcin']
+gracze.shuffle.each_slice(2).map do |g1, g2|
+  "#{g1} i #{g2}"
 end
 \end{lstlisting}
-lalal
+\end{block}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{klasy}
+\frametitle{Elegancja}
+\begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
+\begin{lstlisting}[language=Ruby]
+tablica = []
+for i in [1,2,3,4]
+  tablica << i ** 2
+end
+tablica   # => [1,4,9,16]
+\end{lstlisting}
+\end{block}
+\only<2->{\crossout}
 \end{frame}
+
 \begin{frame}[fragile]
-\frametitle{Everything is an object}
+\frametitle{Elegancja}
+\begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
+\begin{lstlisting}[language=Ruby]
+[1,2,3,4].map { |i| i ** 2 }  # => [1,4,9,16]
+\end{lstlisting}
+\end{block}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Sortowanie według ostatniej litery imienia?}
+\begin{lstlisting}[language=Ruby]
+["Stefan", "Tomek", "Agata", "Maja"].sort_by do |imie|
+  imie[-1]
+end
+# => ["Maja", "Agata", "Tomek", "Stefan"]
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
+\begin{lstlisting}[language=Ruby]
+[1,2,3,4].map { |i| i ** 2 }  # => [1,4,9,16]
+\end{lstlisting}
+\end{block}
+\end{frame}
+%%%% LICZBY %%%%
+
+\begin{frame}[fragile]
+\frametitle{Duże liczby?}
+\begin{block}{No problem!}
+\begin{lstlisting}[language=Ruby]
+7 ** 200
+  => 1046183829131435717501889961181681
+365981918855017023365995014008403512576
+742426225177438261490936405029306524825
+254631417406318034368359118815075426733
+9816534637456120001
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+
+
+
 \begin{frame}[fragile]
 \frametitle{bloki (closures)}
 \end{frame}
+
 \begin{frame}[fragile]
 \frametitle{spaceship operator + sorting}
 \end{frame}
+
 \begin{frame}[fragile]
 \frametitle{singleton classes}
 \end{frame}
+
 \begin{frame}[fragile]
 \frametitle{CONSTANTS??}
 \end{frame}
+
 \begin{frame}[fragile]
 \frametitle{Gems for everything}
  + Gemfile - so cool (bundle install)
 \end{frame}
+
 \begin{frame}[fragile]
 \frametitle{Garbage Collection - Mark \& Sweep}
 % http://patshaughnessy.net/2013/10/24/visualizing-garbage-collection-in-ruby-and-python

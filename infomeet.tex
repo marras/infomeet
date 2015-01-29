@@ -4,6 +4,7 @@
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{tikz}
 
 \usepackage{listings}
 \lstloadlanguages{Ruby}
@@ -34,6 +35,15 @@
     \end{beamercolorbox}
 }
 
+\newcommand{\crossout}[0]{%
+\begin{tikzpicture}[remember picture,overlay,decoration=penciline]
+\draw[decorate,line width=15pt,red!60!black]
+  (current page.north west) -- (current page.south east);
+\draw[decorate,line width=15pt,red!60!black]
+  (current page.north east) -- (current page.center) -- (current page.south west);
+\end{tikzpicture}
+}
+
 \newcommand{\myurl}[1]{%
     \begin{block}{}
        \centering \huge
@@ -42,9 +52,7 @@
        \url{#1}
     \end{block}
 }
-
-\newcommand{\mysection}[1]{%
-    \section{#1}
+\newcommand{\mytitle}[1]{%
     \begin{frame}[plain]
         \begin{centering}
         \vspace{1em}\par
@@ -54,6 +62,10 @@
         \end{centering}
     \end{frame}
 }
+\newcommand{\mysection}[1]{%
+    \section{#1}
+    \mytitle{#1}
+}
 
 \begin{document}
 
@@ -61,16 +73,33 @@
 \titlepage
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Ruby on Rails = \ldots}
+\begin{block}{Ruby}
+    Język programowania
+\end{block}
+\begin{block}{Rails}
+    Framework MVC
+\end{block}
+\begin{block}{Narzędzia}
+    I kilka przydatnych bibliotek
+\end{block}
+\end{frame}
+
 \mysection{Ruby}
 
 \begin{frame}[fragile]\frametitle{Ruby}
     \begin{block}{Język programowania}
     \begin{itemize}
-        \item zorientowany obiektowo (OOP)
-        \item dynamicznie typowany
         \item skryptowy (interpretowany)
+        \item zorientowany obiektowo
+        \item dynamicznie typowany
     \end{itemize}
     \end{block}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Ruby}
+\centering \huge \color{orange} Übung macht den Meister \par
 \end{frame}
 
 \subsection{Jak zacząć?}
@@ -87,10 +116,7 @@
     \includegraphics[width=\paperwidth]{rubywarrior.png}
 \end{frame}
 
-\subsection{Co fajnego w Rubym}
 \include{ruby}
-
-\subsection{Plusy}
 
 \begin{frame}[fragile]
 \frametitle{Co nam dał?}
