@@ -43,23 +43,37 @@
     \end{block}
 }
 
+\newcommand{\mysection}[1]{%
+    \section{#1}
+    \begin{frame}[plain]
+        \begin{centering}
+        \vspace{1em}\par
+            \begin{beamercolorbox}[rounded=true,sep=4pt,center]{part title}
+               \huge #1
+            \end{beamercolorbox}
+        \end{centering}
+    \end{frame}
+}
+
 \begin{document}
 
 \begin{frame}[fragile]
 \titlepage
 \end{frame}
 
-\section{Ruby}
+\mysection{Ruby}
+
 \begin{frame}[fragile]\frametitle{Ruby}
+    \begin{block}{Język programowania}
     \begin{itemize}
-        \item 
-        \item object oriented
-        \item open classes, open modules, open everything
-        \item mozna nadpisac singletonowe metody kazdego obiektu
+        \item zorientowany obiektowo (OOP)
+        \item dynamicznie typowany
+        \item skryptowy (interpretowany)
     \end{itemize}
+    \end{block}
 \end{frame}
 
-
+\subsection{Jak zacząć?}
 \begin{frame}[fragile]
 \frametitle{Wypróbuj Ruby'ego bez instalacji}
     \myurl{tryruby.org}
@@ -67,86 +81,14 @@
     \includegraphics[width=\paperwidth]{tryruby.png}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{Wypróbuj Ruby'ego bez instalacji}
+\frametitle{Koduj albo giń!}
     \myurl{www.bloc.io/ruby-warrior}
     \hspace*{-1.1cm}
     \includegraphics[width=\paperwidth]{rubywarrior.png}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Big sites made with RoR}
-Hulu, YellowPages, GitHub, Twitter (początkowo), Ask.fm
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Big sites made with RoR}
-Hulu, YellowPages, GitHub, Twitter (początkowo), Ask.fm
-\end{frame}
-
-\begin{frame}[fragile]
-\begin{lstlisting}[language=Ruby]
-
-#this is a comment
-
-a = 5
-b = a * 5
-puts b
-puts b + 3
-
-class Test < Test::SomeClass
-@test = 3
-    def bar
-        if foo
-            puts "foo"
-        else
-            puts "bar"
-        end
-    end
-end
-\end{lstlisting}
-lalal
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{klasy}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Everything is an object}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{bloki (closures)}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{spaceship operator + sorting}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{singleton classes}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{CONSTANTS??}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Gems for everything}
- + Gemfile - so cool (bundle install)
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Garbage Collection - Mark \& Sweep}
-% http://patshaughnessy.net/2013/10/24/visualizing-garbage-collection-in-ruby-and-python
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Wątki zielone}
-\end{frame}
-\subsection{Implementacje}
- - otwartość
-
-\begin{frame}[fragile]
-\frametitle{implementacje}
-    * MRI
-    - JRuby - różnice
-\end{frame}
-
-
+\subsection{Co fajnego w Rubym}
+\include{ruby}
 
 \subsection{Plusy}
 
@@ -170,24 +112,7 @@ lalal
 \end{frame}
 
 \section{Rails}
-\subsection{O co chodzi?}
-\begin{frame}[fragile]
-\frametitle{MVC}
-
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{TDD?}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Jak zacząć?}
-
-Heroku 
-EngineYard
-\end{frame}
-
-
+\include{rails}
 
 \section{Podsumowanie}
 
