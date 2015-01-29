@@ -1,3 +1,4 @@
+\mytitle{Dlaczego warto poznać Ruby'ego?}
 %%%% OBIEKTY %%%%%
 \mytitle{Wszystko jest obiektem}
 
@@ -12,6 +13,7 @@
 \end{block}
 \end{frame}
 
+\mytitle{Nic nie jest wieczne}
 \begin{frame}[fragile]
 \frametitle{Nic nie jest wieczne}
 \begin{block}{}
@@ -36,6 +38,8 @@ end
 
 %%%% STALE %%%%%
 
+\mytitle{Język dynamiczny}
+\mytitle{Bardzo dynamiczny}
 \begin{frame}[fragile]
 \frametitle{Nic nie jest wieczne}
 \begin{block}{Stałe}
@@ -63,6 +67,8 @@ puts CONSTANT
 \end{block}
 \end{frame}
 
+\mytitle{With great power comes great responsibility.}
+
 \subsection{Zalety}
 \mytitle{Czy Ruby ma jakieś zalety?}
 \mytitle{Ma.}
@@ -72,7 +78,7 @@ puts CONSTANT
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Pętla}
-\begin{lstlisting}[language=C]
+\begin{lstlisting}[language=C++]
 for (int i=0; i<5; i++) {
   printf("Hello!\n");
 }
@@ -85,12 +91,16 @@ for (int i=0; i<5; i++) {
 
 \begin{frame}[fragile]
 \frametitle{Elegancja}
-\begin{block}{Pętla}
+\begin{block}{Pętla - zmienna niepotrzebna}
 \begin{lstlisting}[language=Ruby]
 5.times { puts "Hello!" }
 \end{lstlisting}
 \end{block}
-\begin{block}{Nie narzuca ograniczeń}
+\end{frame}
+\mytitle{Zmienna grzecznie czeka na drugim planie}
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Ruby nie narzuca ograniczeń}
 \begin{lstlisting}[language=Ruby]
 5.times { |i| puts i }
 
@@ -102,35 +112,22 @@ for (int i=0; i<5; i++) {
 \end{lstlisting}
 \end{block}
 \end{frame}
-
-%%%%% TURNIEJ %%%%%%
-
 \begin{frame}[fragile]
 \frametitle{Elegancja}
-\begin{block}{Losowanie drużyn do turnieju}
-\begin{lstlisting}[language=Ruby]
-gracze = ["Ela", "Ola", "Agnieszka",
-          "Marek", "Wojtek", "Marcin"]
+\begin{block}{Ruby brzmi jak prawdziwy język}
+\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+exit unless "restaurant".include? "aura"
+
+['toast', 'cheese', 'wine'].each { |food| print food.capitalize }
+
+population = 12_000_000_000
+
+(1..10).include? 5
 \end{lstlisting}
 \end{block}
 \end{frame}
-\begin{frame}[fragile]
-\frametitle{Elegancja}
-\begin{block}{Losowanie drużyn do turnieju}
-\begin{lstlisting}[language=Ruby]
-gracze = ["Ela", "Ola", "Agnieszka",
-          "Marek", "Wojtek", "Marcin"]
-gracze.shuffle.each_slice(2).to_a
-# => [["Agnieszka", "Marek"],
-#     ["Wojtek", "Ola"],
-#     ["Marcin", "Ela"]]
-gracze.shuffle.each_slice(2).to_a
-# => [["Ola", "Agnieszka"],
-#     ["Wojtek", "Marcin"],
-#     ["Ela", "Marek"]]
-\end{lstlisting}
-\end{block}
-\end{frame}
+
+\mytitle{Jedna linijka}
 
 \begin{frame}[fragile]
 \frametitle{Elegancja}
@@ -145,12 +142,11 @@ tablica   # => [1,4,9,16]
 \end{block}
 \only<2->{\crossout}
 \end{frame}
-
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
 \begin{lstlisting}[language=Ruby]
-[1,2,3,4].map { |i| i ** 2 }  # => [1,4,9,16]
+(1..4).map { |i| i ** 2 }  # => [1,4,9,16]
 \end{lstlisting}
 \end{block}
 \end{frame}
@@ -158,11 +154,39 @@ tablica   # => [1,4,9,16]
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Sortowanie według ostatniej litery imienia?}
-\begin{lstlisting}[language=Ruby]
-["Stefan", "Tomek", "Agata", "Maja"].sort_by do |imie|
-  imie[-1]
-end
+\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+["Stefan", "Tomek", "Agata", "Maja"].sort_by { |imie| imie[-1] }
+
 # => ["Maja", "Agata", "Tomek", "Stefan"]
+\end{lstlisting}
+\end{block}
+\end{frame}
+%%%%% TURNIEJ %%%%%%
+\begin{frame}[plain]
+\myfullimage{foosball.jpg}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Losowanie drużyn do turnieju}
+\begin{lstlisting}[language=Ruby]
+gracze = ["Ela", "Ola", "Agnieszka",
+          "Marek", "Wojtek", "Marcin"]
+\end{lstlisting}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Losowanie drużyn do turnieju}
+\begin{lstlisting}[language=Ruby]
+gracze = ["Ela", "Ola", "Agnieszka",
+          "Marek", "Wojtek", "Marcin"]
+
+gracze.shuffle.each_slice(2).to_a
+
+# => [["Agnieszka", "Marek"],
+#     ["Wojtek", "Ola"],
+#     ["Marcin", "Ela"]]
 \end{lstlisting}
 \end{block}
 \end{frame}
@@ -190,6 +214,7 @@ end
 
 
 %%%% METAPROGRAMMING %%%%%%
+\mytitle{Meta-programowanie}
 
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
@@ -218,9 +243,13 @@ end
 \end{block}
 \only<2->{\crossout}
 \end{frame}
+\begin{frame}[plain]
+    \centering \includegraphics[height=\paperheight]{dry_yoda.jpg} \par
+\end{frame}
+\mytitle{obiekt.send(nazwa\_metody)}
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
-\begin{block}{Don't Repeat Yourself!}
+\begin{block}{Wywołanie wybranej metody}
 \begin{lstlisting}[language=Ruby]
 class Auto
   def wypisz(co)
@@ -246,6 +275,20 @@ a.wypisz('moc')
 \end{block}
 \end{frame}
 
+\begin{frame}[plain]
+\begin{block}{}
+\begin{centering}
+\color{violet}Ruby
+   
+\only<1->{\color{black}potrafi wywołać metodę}
+   
+\only<2->{która}
+   
+\only<3->{\huge \color{red} NIE ISTNIEJE}
+
+\end{centering}
+\end{block}
+\end{frame}
 
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}

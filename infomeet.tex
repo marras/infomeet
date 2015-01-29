@@ -36,6 +36,11 @@
     \end{beamercolorbox}
 }
 
+\newcommand{\myfullimage}[1]{%
+    \hspace*{-1.1cm}
+    \includegraphics[width=\paperwidth]{#1}
+}
+
 \newcommand{\crossout}[0]{%
 \begin{tikzpicture}[remember picture,overlay,decoration=penciline]
 \draw[decorate,line width=15pt,red!60!black]
@@ -70,12 +75,12 @@
 
 \begin{document}
 
-\begin{frame}[fragile]
+\begin{frame}[plain]
 \titlepage
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Ruby on Rails = \ldots}
+\begin{frame}[plain]
+\frametitle{Ruby on Rails = $?$}
 \begin{block}{Ruby}
     Język programowania
 \end{block}
@@ -99,22 +104,18 @@
     \end{block}
 \end{frame}
 
-\begin{frame}[fragile]\frametitle{Ruby}
-\centering \huge \color{orange} Übung macht den Meister \par
-\end{frame}
+\mytitle{\centering \huge \color{orange} Übung macht den Meister \par}
 
 \subsection{Jak zacząć?}
 \begin{frame}[fragile]
 \frametitle{Wypróbuj Ruby'ego bez instalacji}
     \myurl{tryruby.org}
-    \hspace*{-1.1cm}
-    \includegraphics[width=\paperwidth]{tryruby.png}
+    \myfullimage{tryruby.png}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Koduj albo giń!}
     \myurl{www.bloc.io/ruby-warrior}
-    \hspace*{-1.1cm}
-    \includegraphics[width=\paperwidth]{rubywarrior.png}
+    \myfullimage{rubywarrior.png}
 \end{frame}
 
 \include{ruby}
