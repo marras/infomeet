@@ -67,28 +67,67 @@ puts CONSTANT
 \mytitle{Czy Ruby ma jakieś zalety?}
 \mytitle{Ma.}
 
+%%%% ZMIENNE %%%
+
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Pętla}
+\begin{lstlisting}[language=C]
+for (int i=0; i<5; i++) {
+  printf("Hello!\n");
+}
+\end{lstlisting}
+\end{block}
+\only<2->{\crossout}
+\end{frame}
+
+\mytitle{Nie twórzmy niepotrzebnych zmiennych}
+
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Pętla}
 \begin{lstlisting}[language=Ruby]
 5.times { puts "Hello!" }
-Hello
-Hello
-Hello
-Hello
-Hello
+\end{lstlisting}
+\end{block}
+\begin{block}{Nie narzuca ograniczeń}
+\begin{lstlisting}[language=Ruby]
+5.times { |i| puts i }
+
+0
+1
+2
+3
+4
 \end{lstlisting}
 \end{block}
 \end{frame}
 
+%%%%% TURNIEJ %%%%%%
+
 \begin{frame}[fragile]
 \frametitle{Elegancja}
-\begin{block}{Losowanie}
+\begin{block}{Losowanie drużyn do turnieju}
 \begin{lstlisting}[language=Ruby]
-gracze = ['Ela', 'Ola', 'Agnieszka', 'Marek', 'Wojtek', 'Marcin']
-gracze.shuffle.each_slice(2).map do |g1, g2|
-  "#{g1} i #{g2}"
-end
+gracze = ["Ela", "Ola", "Agnieszka",
+          "Marek", "Wojtek", "Marcin"]
+\end{lstlisting}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Elegancja}
+\begin{block}{Losowanie drużyn do turnieju}
+\begin{lstlisting}[language=Ruby]
+gracze = ["Ela", "Ola", "Agnieszka",
+          "Marek", "Wojtek", "Marcin"]
+gracze.shuffle.each_slice(2).to_a
+# => [["Agnieszka", "Marek"],
+#     ["Wojtek", "Ola"],
+#     ["Marcin", "Ela"]]
+gracze.shuffle.each_slice(2).to_a
+# => [["Ola", "Agnieszka"],
+#     ["Wojtek", "Marcin"],
+#     ["Ela", "Marek"]]
 \end{lstlisting}
 \end{block}
 \end{frame}
@@ -128,14 +167,6 @@ end
 \end{block}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Elegancja}
-\begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
-\begin{lstlisting}[language=Ruby]
-[1,2,3,4].map { |i| i ** 2 }  # => [1,4,9,16]
-\end{lstlisting}
-\end{block}
-\end{frame}
 %%%% LICZBY %%%%
 
 \begin{frame}[fragile]
@@ -148,11 +179,143 @@ end
 742426225177438261490936405029306524825
 254631417406318034368359118815075426733
 9816534637456120001
+
+7.class
+# => Fixnum
+(7 ** 200).class
+# => Bignum
 \end{lstlisting}
 \end{block}
 \end{frame}
 
 
+%%%% METAPROGRAMMING %%%%%%
+
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Sztuczne metody}
+\begin{lstlisting}[language=Ruby]
+class Auto
+  def wypisz_predkosc
+    puts "predkosc = #{predkosc}"
+  end
+
+  def wypisz_moc
+    puts "moc = #{moc}"
+  end
+
+  private
+
+  def predkosc
+    "200 km/h"
+  end
+
+  def moc
+    120
+  end
+end
+\end{lstlisting}
+\end{block}
+\only<2->{\crossout}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Don't Repeat Yourself!}
+\begin{lstlisting}[language=Ruby]
+class Auto
+  def wypisz(co)
+    puts "#{co} = #{send(co)}"
+  end
+
+  private
+
+  def predkosc
+    "200 km/h"
+  end
+
+  def moc
+    120
+  end
+end
+
+a = Auto.new
+a.wypisz('moc')
+# moc = 120
+
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Wywołanie nieistniejącej metody}
+\begin{lstlisting}[language=Ruby]
+class A
+  def hello
+    puts "Hello, world!"
+  end
+end
+
+a = A.new
+a.hello
+# "Hello, world!"
+a.inna_metoda
+# NoMethodError: undefined method `inna_metoda' for a:A
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\mytitle{Obiekty są samoświadome}
+\begin{frame}[plain]
+  TU OBARZEK HAL'A
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Pomocny program}
+\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+class A
+  def hello
+    puts "Hello, world!"
+  end
+
+  private
+
+  def method_missing(name, *args)
+    puts "Czy miales na mysli: #{self.methods.join(', ')}"
+  end
+end
+
+a = A.new
+a.inna_metoda
+# Czy miales na mysli: hello, nil?, ===, =~, !~, eql?, hash, <=>, class, singleton_class, clone, dup, taint, tainted?, untaint, untrust, untrusted?, trust, freeze, frozen?, to_s, inspect, methods, singleton_methods, protected_methods, private_methods, public_methods, instance_variables, instance_variable_get, instance_variable_set, instance_variable_defined?, remove_instance_variable, instance_of?, kind_of?, is_a?, tap, send, public_send, respond_to?, extend, display, method, public_method, singleton_method, define_singleton_method, object_id, to_enum, enum_for, ==, equal?, !, !=, instance_eval, instance_exec, __send__, __id__
+\end{lstlisting}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Jeszcze bardziej pomocny}
+\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+class A
+  def hello
+    puts "Hello, world!"
+  end
+
+  private
+
+  def method_missing(name, *args)
+    metody = self.methods - Object.methods
+    puts "Czy miales na mysli: #{metody.join(', ')}"
+  end
+end
+
+a = A.new
+a.inna_metoda
+# Czy miales na mysli: hello
+\end{lstlisting}
+\end{block}
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -160,15 +323,7 @@ end
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{spaceship operator + sorting}
-\end{frame}
-
-\begin{frame}[fragile]
 \frametitle{singleton classes}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{CONSTANTS??}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -184,8 +339,6 @@ end
 \begin{frame}[fragile]
 \frametitle{Wątki zielone}
 \end{frame}
-\subsection{Implementacje}
- - otwartość
 
 \begin{frame}[fragile]
 \frametitle{implementacje}
