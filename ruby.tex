@@ -309,11 +309,28 @@ a.inna_metoda
 \end{block}
 \end{frame}
 
-\mytitle{Obiekty są samoświadome}
-\begin{frame}[plain]
-  TU OBARZEK HAL'A
-\end{frame}
+\mytitle{Obiekty są samoświadome 
+\vspace{1cm}
+\includegraphics[width=7cm]{gerty.jpg}}
 
+\begin{frame}[fragile]
+\frametitle{Metaprogramowanie}
+\begin{block}{Pomocny program}
+\begin{lstlisting}[language=Ruby]
+class A
+  def hello
+    puts "Hello, world!"
+  end
+
+  private
+
+  def method_missing(name, *args)
+    puts "Czy miales na mysli: #{self.methods.join(', ')}"
+  end
+end
+\end{lstlisting}
+\end{block}
+\end{frame}
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Pomocny program}
@@ -338,7 +355,7 @@ a.inna_metoda
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
-\begin{block}{Jeszcze bardziej pomocny}
+\begin{block}{Trochę bardziej pomocny program}
 \begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
 class A
   def hello
@@ -360,31 +377,42 @@ a.inna_metoda
 \end{block}
 \end{frame}
 
-
+\mytitle{To nie wszystko!}
 \begin{frame}[fragile]
-\frametitle{bloki (closures)}
+\frametitle{Biblioteki}
+    \myurl{rubygems.org}
+    \myfullimage{rubygems.png}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{singleton classes}
-\end{frame}
+\mytitle{95,447 gemów \footnotesize(29/01/2015)}
 
 \begin{frame}[fragile]
-\frametitle{Gems for everything}
- + Gemfile - so cool (bundle install)
+\frametitle{Biblioteki}
+\begin{block}{Gemfile}
+\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+source 'https://rubygems.org'
+
+gem 'rails', '3.2.21'
+gem 'capistrano', '>= 2.15',require: false
+gem 'netguru', :git => 'git://github.com/netguru/netguru.git'
+
+gem 'rollbar', '1.4.0'
+gem 'rails-backbone'
+gem 'bson_ext'
+gem 'carrierwave', '~> 0.9.0'
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
+gem 'colorize', require: false
+gem 'dalli'
+gem 'daemons'
+gem 'decent_exposure'
+gem 'draper'
+...
+\end{lstlisting}
+\end{block}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Garbage Collection - Mark \& Sweep}
-% http://patshaughnessy.net/2013/10/24/visualizing-garbage-collection-in-ruby-and-python
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Wątki zielone}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{implementacje}
-    * MRI
-    - JRuby - różnice
-\end{frame}
+%\begin{frame}[fragile]
+%\frametitle{implementacje}
+    %* MRI
+    %- JRuby - różnice
+%\end{frame}

@@ -120,41 +120,114 @@
 
 \include{ruby}
 
-\begin{frame}[fragile]
-\frametitle{Co nam dał?}
-
-- Technologie sieciowe - where it excels
-* lessCSS / SASS
-* HAML
-* CoffeeScript
-* Rails!!!
-\end{frame}
-
 \subsection{Z czym się tego nie je}
 
 \begin{frame}[fragile]
 \frametitle{Z czym się tego nie je?}
-    * GameDev
-    * High-performance tasks (ale można integrować z modułami C++, ale nie ma np.\ bytecode'u - tylko AST)
-    * Wątki - sztuczne (JRuby obsługuje kilka)
+\begin{itemize}
+\item{Gry komputerowe}
+    \begin{itemize}
+        \only<2->{\item{Czyszczenie pamięci (mark \& sweep)}}
+    \end{itemize}
+        \only<3->{\item{Zadania wymagające wysokiej wydajności}}
+    \begin{itemize}
+      \only<4->{\item{kodu w Ruby'ego nie da się kompilować (w większości wersji)}}
+      \only<5->{\item{można integrować z modułami C++}}
+    \end{itemize}
+        \only<6->{\item{Wielowątkowość}}
+    \begin{itemize}
+        \only<7->{\item{Zielone wątki, GIL}}
+    \end{itemize}
+        \only<8->{\item{Grafika, wykresy, analiza danych}}
+    \begin{itemize}
+        \only<9->{\item{Brak dobrych bibliotek}}
+    \end{itemize}
+\end{itemize}
 \end{frame}
 
 \section{Rails}
+\mytitle{Oryginalna przyczyna popularności Ruby'ego?}
+\mytitle{Technologie sieciowe}
+\mytitle{Rails}
+
 \include{rails}
+
+\begin{frame}[fragile]
+\frametitle{Co jeszcze dał nam Ruby?}
+
+\begin{itemize}
+\item{LessCSS / SASS}
+\item{HAML}
+\item{CoffeeScript}
+\item{Homebrew}
+\end{itemize}
+\end{frame}
 
 \section{Podsumowanie}
 
+\mytitle{Co dalej?}
+
 \begin{frame}[fragile]
-\frametitle{PRUG}
+\frametitle{Nauka}
+\myurl{gorails.com}
+\myfullimage{gorails.png}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Big sites made with RoR}
-Hulu, YellowPages, GitHub, Twitter (początkowo), Ask.fm
+\frametitle{Nauka}
+\myurl{railscasts.com}
+\myfullimage{railscasts.png}
 \end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Nauka}
+\myurl{www.railstutorial.org}
+\myfullimage{railstutorial.png}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Darmowy serwer}
+\myurl{heroku.com}
+\myfullimage{heroku.png}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Spotkania co miesiąc!}
+\myurl{prug.pl}
+\myfullimage{prug.png}
+\end{frame}
+
+\mytitle{Wykłady\par
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}}
+}
+\mytitle{Prelekcje\par
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}}
+}
+\mytitle{Spotkania z autorami różnych ciekawych bibliotek\par
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}}
+}
+
+\mytitle{Możliwość poznania poznańskich programistów Ruby on Rails}
 
 \begin{frame}[fragile]
 \frametitle{Rekrutujemy!}
-\url{https://netguru.co/career}
+\myurl{netguru.co}
+\myfullimage{rekrutacja.png}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{centering}
+    \vspace{1em}\par
+        \begin{beamercolorbox}[rounded=true,sep=4pt,center]{part title}
+           \huge Dziękuję za uwagę!
+        \end{beamercolorbox}
+    \vspace{0.5cm}
+    \myurl{github.com/marras/infomeet}
+    \vspace{1.5cm}
+    \includegraphics[width=7.5cm]{netguru_logo.jpg} \par
+\end{centering}
 \end{frame}
 \end{document}
