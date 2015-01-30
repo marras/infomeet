@@ -9,23 +9,17 @@
 \usepackage{listings}
 \lstloadlanguages{Ruby}
 \lstset{basicstyle=\ttfamily\color{black}\scriptsize,
-        commentstyle = \ttfamily\color{red},
+        commentstyle = \ttfamily\color{blue!20!black!30!green},
         keywordstyle=\ttfamily\color{blue},
         stringstyle=\color{orange},
         showstringspaces=false,
         breaklines=true}
-\lstset{escapechar=£}
 
-\usepackage{xcolor,tikz}
-\newcommand\bh{\tikz[remember picture]
-                \node (begin highlight) {};
-             }
-\newcommand\eh{\tikz[remember picture]
-             \node (end highlight) {};
-             \tikz[remember picture, overlay] 
-             \draw[yellow,line width=10pt,opacity=0.3] (begin highlight) -- (end
-              highlight);
-             }
+% Enable coloring of selected parts of code
+\lstdefinestyle{Ruby}{%
+    language={Ruby},
+    moredelim=**[is][\color{red}\bfseries]{£}{£},
+}
 
 \hypersetup{colorlinks=true}
 

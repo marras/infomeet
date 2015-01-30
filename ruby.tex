@@ -1,5 +1,5 @@
-\mytitle{Dlaczego warto poznać Ruby'ego? \par \vspace{2cm}
-\includegraphics[width=3cm]{Ruby_logo.png}
+\mytitle{Dlaczego warto poznać Ruby'ego? \par \vspace{1cm}
+\includegraphics[width=3cm]{Ruby_logo.png} \vspace{0.5cm}
 }
 
 \mytitle{Elegancja}
@@ -7,7 +7,7 @@
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Ruby brzmi jak prawdziwy język}
-\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[style=Ruby,basicstyle=\tiny\ttfamily]
 exit unless "restaurant".include? "aura"
 
 ['toast', 'cheese', 'wine'].each { |food| print food.capitalize }
@@ -25,7 +25,7 @@ population = 12_000_000_000
 \begin{frame}[fragile]
 \frametitle{Wszystko jest obiektem}
 \begin{block}{}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 5.class  # => Fixnum
 5 + 3    # => 8
 5.+(3)   # => 8
@@ -37,14 +37,14 @@ population = 12_000_000_000
 \begin{frame}[fragile]
 \frametitle{Nic nie jest wieczne}
 \begin{block}{}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 5.class  # => Fixnum
 5 + 3    # => 8
 5.+(3)   # => 8
 \end{lstlisting}
 \end{block}
 \begin{block}{Psikus!}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 class Fixnum
   def +(x)
     self - x
@@ -63,7 +63,7 @@ end
 \begin{frame}[fragile]
 \frametitle{Nic nie jest wieczne}
 \begin{block}{Stałe}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 CONSTANT = 5
 \end{lstlisting}
 \end{block}
@@ -72,12 +72,12 @@ CONSTANT = 5
 \begin{frame}[fragile]
 \frametitle{Nic nie jest wieczne}
 \begin{block}{Stałe}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 CONSTANT = 5
 \end{lstlisting}
 \end{block}
 \begin{block}{Psikus!}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 CONSTANT = 5
 CONSTANT = 0
 # warning: already initialized constant CONSTANT
@@ -113,7 +113,7 @@ for (int i=0; i<5; i++) {
 \frametitle{Elegancja}
 \begin{columns}
  \column{5cm}
-    \begin{block}{Pętla C++}
+    \begin{block}{Pętla w C++}
 \begin{lstlisting}[language=C++]
 for (int i=0; i<5; i++) {
   printf("Hello!\n");
@@ -122,8 +122,8 @@ for (int i=0; i<5; i++) {
     \end{block}
  \column{5cm}
     \begin{block}{Pętla w Ruby (bez zmiennej)}
-\begin{lstlisting}[language=Ruby]
-5.times { puts "Hello!" }
+\begin{lstlisting}[style=Ruby]
+£5.times£ { puts "Hello!" }
 \end{lstlisting}
     \end{block}
 \end{columns}
@@ -133,9 +133,9 @@ for (int i=0; i<5; i++) {
 
 \begin{frame}[fragile]
 \frametitle{Elegancja}
-\begin{block}{Ruby nie narzuca ograniczeń}
-\begin{lstlisting}[language=Ruby]
-5.times { |i| puts i }
+\begin{block}{Ruby \bh{}nie\eh{} narzuca ograniczeń}
+\begin{lstlisting}[style=Ruby]
+5.times { £|i|£ puts i }
 
 0
 1
@@ -151,7 +151,7 @@ for (int i=0; i<5; i++) {
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 tablica = []
 for i in [1,2,3,4]
   tablica << i ** 2
@@ -165,16 +165,16 @@ tablica   # => [1,4,9,16]
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Podnieś do kwadratu wszystkie liczby w tablicy}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 (1..4).map { |i| i ** 2 }  # => [1,4,9,16]
 \end{lstlisting}
 \end{block}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Elegancja}
+\frametitle{Panie przodem}
 \begin{block}{Sortowanie według ostatniej litery imienia?}
-\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[style=Ruby,basicstyle=\tiny\ttfamily]
 ["Stefan", "Tomek", "Agata", "Maja"].sort_by { |imie| imie[-1] }
 
 # => ["Maja", "Agata", "Tomek", "Stefan"]
@@ -190,7 +190,7 @@ tablica   # => [1,4,9,16]
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Losowanie drużyn do turnieju}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 gracze = ["Ela", "Ola", "Agnieszka",
           "Marek", "Wojtek", "Marcin"]
 \end{lstlisting}
@@ -199,7 +199,7 @@ gracze = ["Ela", "Ola", "Agnieszka",
 \begin{frame}[fragile]
 \frametitle{Elegancja}
 \begin{block}{Losowanie drużyn do turnieju}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 gracze = ["Ela", "Ola", "Agnieszka",
           "Marek", "Wojtek", "Marcin"]
 
@@ -217,7 +217,7 @@ gracze.shuffle.each_slice(2).to_a
 \begin{frame}[fragile]
 \frametitle{Duże liczby?}
 \begin{block}{No problem!}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 7 ** 200
   => 1046183829131435717501889961181681
 365981918855017023365995014008403512576
@@ -240,7 +240,7 @@ gracze.shuffle.each_slice(2).to_a
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Sztuczne metody}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 class Auto
   def wypisz_predkosc
     puts "predkosc = #{predkosc}"
@@ -271,7 +271,7 @@ end
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Wywołanie wybranej metody}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 class Auto
   def wypisz(co)
     puts "#{co} = #{send(co)}"
@@ -314,7 +314,7 @@ a.wypisz('moc')
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Wywołanie nieistniejącej metody}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 class A
   def hello
     puts "Hello, world!"
@@ -337,7 +337,7 @@ a.inna_metoda
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Pomocny program}
-\begin{lstlisting}[language=Ruby]
+\begin{lstlisting}[style=Ruby]
 class A
   def hello
     puts "Hello, world!"
@@ -355,7 +355,7 @@ end
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Pomocny program}
-\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[style=Ruby,basicstyle=\tiny\ttfamily]
 class A
   def hello
     puts "Hello, world!"
@@ -377,7 +377,7 @@ a.inna_metoda
 \begin{frame}[fragile]
 \frametitle{Metaprogramowanie}
 \begin{block}{Trochę bardziej pomocny program}
-\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[style=Ruby,basicstyle=\tiny\ttfamily]
 class A
   def hello
     puts "Hello, world!"
@@ -410,7 +410,7 @@ a.inna_metoda
 \begin{frame}[fragile]
 \frametitle{Biblioteki}
 \begin{block}{Gemfile}
-\begin{lstlisting}[language=Ruby,basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[style=Ruby,basicstyle=\tiny\ttfamily]
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
