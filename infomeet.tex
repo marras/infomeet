@@ -14,6 +14,18 @@
         stringstyle=\color{orange},
         showstringspaces=false,
         breaklines=true}
+\lstset{escapechar=£}
+
+\usepackage{xcolor,tikz}
+\newcommand\bh{\tikz[remember picture]
+                \node (begin highlight) {};
+             }
+\newcommand\eh{\tikz[remember picture]
+             \node (end highlight) {};
+             \tikz[remember picture, overlay] 
+             \draw[yellow,line width=10pt,opacity=0.3] (begin highlight) -- (end
+              highlight);
+             }
 
 \hypersetup{colorlinks=true}
 
@@ -102,6 +114,7 @@
         \item dynamicznie typowany
     \end{itemize}
     \end{block}
+\only<2->{\crossout}
 \end{frame}
 
 \mytitle{\centering \huge \color{orange} Übung macht den Meister \par}
@@ -169,6 +182,13 @@
 
 \begin{frame}[fragile]
 \frametitle{Nauka}
+
+WZORY CHEMICZNE PROBOWKI I TAKIE TAM****
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Nauka}
 \myurl{gorails.com}
 \myfullimage{gorails.png}
 \end{frame}
@@ -211,6 +231,8 @@
 }
 
 \mytitle{Możliwość poznania poznańskich programistów Ruby on Rails}
+
+\mytitle{A jeszcze lepiej się poznacie, jeśli zaaplikujecie do którejś z firm!****}
 
 \begin{frame}[fragile]
 \frametitle{Rekrutujemy!}
