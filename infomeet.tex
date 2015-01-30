@@ -9,7 +9,7 @@
 \usepackage{listings}
 \lstloadlanguages{Ruby}
 \lstset{basicstyle=\ttfamily\color{black}\scriptsize,
-        commentstyle = \ttfamily\color{blue!20!black!30!green},
+        commentstyle = \ttfamily\color{blue!40!black!60!green},
         keywordstyle=\ttfamily\color{blue},
         stringstyle=\color{orange},
         showstringspaces=false,
@@ -64,14 +64,17 @@
        \url{#1}
     \end{block}
 }
+\newcommand{\mybox}[1]{%
+    \begin{centering}
+    \vspace{1em}\par
+        \begin{beamercolorbox}[rounded=true,sep=4pt,center]{part title}
+           \huge #1
+        \end{beamercolorbox}
+    \end{centering}
+}
 \newcommand{\mytitle}[1]{%
     \begin{frame}[plain]
-        \begin{centering}
-        \vspace{1em}\par
-            \begin{beamercolorbox}[rounded=true,sep=4pt,center]{part title}
-               \huge #1
-            \end{beamercolorbox}
-        \end{centering}
+        \mybox{#1}
     \end{frame}
 }
 \newcommand{\mysection}[1]{%
@@ -86,16 +89,21 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ruby on Rails = $?$}
+\frametitle{Wstęp}
+\centering {\huge Ruby on Rails} \par
+\vspace{0.5cm}
+\begin{columns}
+\column{4.5cm}
 \begin{block}{Ruby}
     Język programowania
 \end{block}
+\column{0.5cm}
+  $+$
+\column{4.5cm}
 \begin{block}{Rails}
     Framework MVC
 \end{block}
-\begin{block}{Narzędzia}
-    I kilka przydatnych bibliotek
-\end{block}
+\end{columns}
 \end{frame}
 
 \mysection{Ruby}
@@ -127,6 +135,14 @@
 
 \include{ruby}
 
+\mytitle{Ruby jest ładny}
+\mytitle{Ruby jest open source}
+\mytitle{Ruby jest popularny}
+
+\mytitle{Ale nie do wszystkiego się nadaje \par
+\vspace{0.5cm}
+\includegraphics[width=4cm]{sadface.png}}
+
 \subsection{Z czym się tego nie je}
 
 \begin{frame}[fragile]
@@ -155,7 +171,7 @@
 \section{Rails}
 \mytitle{Oryginalna przyczyna popularności Ruby'ego?}
 \mytitle{Technologie sieciowe}
-\mytitle{Rails}
+\mytitle{\includegraphics[width=4cm]{rails.png}}
 
 \include{rails}
 
@@ -173,12 +189,10 @@
 \section{Podsumowanie}
 
 \mytitle{Co dalej?}
+\mytitle{Do dzieła!}
 
-\begin{frame}[fragile]
-\frametitle{Nauka}
-
-WZORY CHEMICZNE PROBOWKI I TAKIE TAM****
-
+\begin{frame}[plain]
+\myfullimage{chemia_wzory.jpg}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -211,22 +225,35 @@ WZORY CHEMICZNE PROBOWKI I TAKIE TAM****
 \myfullimage{prug.png}
 \end{frame}
 
-\mytitle{Wykłady\par
-\vspace{0.5cm}
-\includegraphics[width=3cm]{piwo.png}}
-}
-\mytitle{Prelekcje\par
-\vspace{0.5cm}
-\includegraphics[width=3cm]{piwo.png}}
-}
-\mytitle{Spotkania z autorami różnych ciekawych bibliotek\par
-\vspace{0.5cm}
-\includegraphics[width=3cm]{piwo.png}}
-}
+\mytitle{Co ciekawego na PRUGu?}
 
-\mytitle{Możliwość poznania poznańskich programistów Ruby on Rails}
+\begin{frame}[plain]
+\mybox{Wykłady}
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}
+\end{frame}
 
-\mytitle{A jeszcze lepiej się poznacie, jeśli zaaplikujecie do którejś z firm!****}
+\begin{frame}[plain]
+\mybox{Prelekcje}
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}
+\includegraphics[width=3cm]{piwo.png}
+\end{frame}
+\begin{frame}[plain]
+\mybox{Spotkania z autorami różnych ciekawych bibliotek}
+\vspace{0.5cm}
+\includegraphics[width=3cm]{piwo.png}
+\includegraphics[width=3cm]{piwo.png}
+\includegraphics[width=3cm]{piwo.png}
+\end{frame}
+
+\begin{frame}[plain]
+\mybox{Kontakt z poznańskim środowiskiem RoR}
+\vspace{0.5cm}
+\myfullimage{netgurale.jpg}
+\end{frame}
+
+\mytitle{A jeszcze lepiej się poznacie, jeśli zaaplikujecie do którejś z firm!}
 
 \begin{frame}[fragile]
 \frametitle{Rekrutujemy!}
@@ -243,7 +270,7 @@ WZORY CHEMICZNE PROBOWKI I TAKIE TAM****
     \vspace{0.5cm}
     \myurl{github.com/marras/infomeet}
     \vspace{1.5cm}
-    \includegraphics[width=7.5cm]{netguru_logo.jpg} \par
+    \includegraphics[width=7cm]{netguru_logo.jpg} \par
 \end{centering}
 \end{frame}
 \end{document}
